@@ -1,6 +1,13 @@
-def func1(x:int) -> str:
-    print("func1", x*2)
-    return f" результат обчислення {x+10}"
+def func1(x):
+    return x * 2
 
-a = func1(67)
-print(a)
+
+print(func1(4))
+
+print(lambda x : x * 2)
+
+
+print(lambda text, size : text.splitlines()[:size])
+
+def split_size(text, size):
+    return text.splitlines()[:size]

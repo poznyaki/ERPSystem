@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-
 from PyQt5.QtWidgets import (QApplication,
                              QWidget,
                              QPushButton,
@@ -44,10 +43,12 @@ class BusinessERP(BaseWindow):
 
         ware_house_page_button = QPushButton("🏢 Warehouse")
         ware_house_page_button.setObjectName("drawer-button")
+        ware_house_page_button.clicked.connect(lambda: self.open_home_page(self.warehouse_window))
         ware_house_page_button_widget = DrawerButton(ware_house_page_button, "🏢 Warehouse", "🏢")
 
         jobs_page_button = QPushButton("📄 Jobs")
         jobs_page_button.setObjectName("drawer-button")
+        jobs_page_button.clicked.connect(lambda: self.open_home_page(self.jobs_window))
         jobs_page_button_widget = DrawerButton(jobs_page_button, "📄 Jobs", "📄")
 
         settings_page_button = QPushButton("⚙️ Settings")
@@ -65,7 +66,14 @@ class BusinessERP(BaseWindow):
                                 quit_page_button_widget)
 
     def show_window(self, widget_window):
-        ...
+        if self.current_content_widget is not None:
+            self.content_layout.removeWidget(self.current_content_widget)
+            self.current_content_widget.setParent(None)
+
+        self.current_layout.addWidget(self.current_content_widget)
+        self.current_content_widget = widget_window
+
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
