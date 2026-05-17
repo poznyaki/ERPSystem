@@ -64,6 +64,9 @@ class BusinessERP(BaseWindow):
                                 settings_page_button_widget,
                                 quit_page_button_widget)
 
+    def show_window(self, widget_window):
+        ...
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = BusinessERP()

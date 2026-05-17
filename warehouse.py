@@ -6,6 +6,7 @@ class Warehouse(BaseWindow):
     def __init__(self):
         super(Warehouse, self).__init__("WarehouseWindow")
         layout = QVBoxLayout(self)
+        self.setMinimumSize(0, 0)
         layout.addWidget(QLabel("Warehouse"))
         self.setLayout(layout)
 

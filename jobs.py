@@ -6,6 +6,7 @@ class Jobs(BaseWindow):
     def __init__(self):
         super(Jobs, self).__init__("JobsWindow")
         layout = QVBoxLayout(self)
+        self.setMinimumSize(0, 0)
         layout.addWidget(QLabel("Jobs"))
         self.setLayout(layout)
 
