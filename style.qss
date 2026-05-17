@@ -1,0 +1,16 @@
+/*
+Danube #5992c6
+Cocoa Brown #31241f
+Shilo #e9b8c9
+Torea Bay #0a2a92
+*/
+
+QWidget {
+    background-color: #5992c6;
+    color: #31241f;
+}
+
+#drawwer-wrapper {
+    background-color: #0a2a92;
+    color: #e9b8c9;
+}
